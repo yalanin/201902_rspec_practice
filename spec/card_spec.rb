@@ -1,18 +1,27 @@
 class Card
-  attr_reader :type
+  attr_reader :rank, :suit
 
-  def initialize(type)
-    @type = type
+  def initialize(rank, suit)
+    @rank = rank
+    @suit = suit
   end
 end
 
 
 
+RSpec.describe Card do
+  # it example describtion do
+  # specify example describtion
+  # 上二行功能相同      
+  # end
 
-RSpec.describe 'Card' do
-  it '包含一種形態'do
-  # specify '包含一種形態' do    功能同第二行
-    card = Card.new('Ace of Spades')
-    expect(card.type).to eq('Ace of Spades')
+  it '包含一個數字'do
+    card = Card.new('Ace', 'Spades')
+    expect(card.rank).to eq('Ace')
+  end
+
+  it '包含一個類別' do
+    card = Card.new('Ace', 'Spades')
+    expect(card.suit).to eq('Spades')
   end
 end
