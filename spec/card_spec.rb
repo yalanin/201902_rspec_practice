@@ -42,4 +42,10 @@ RSpec.describe Card do
   it '包含一個類別' do
     expect(card.suit).to eq('Spades')
   end
+
+  it '自定義錯誤' do
+    card.suit = 'Flower'
+    comparison = 'Spades'
+    expect(card.suit).to eq(comparison), "comparison: #{comparison}, card.suit: #{card.suit}"
+  end
 end
