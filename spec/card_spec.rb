@@ -43,7 +43,7 @@ RSpec.describe Card do
     expect(card.suit).to eq('Spades')
   end
 
-  it '自定義錯誤' do
+  it '客製化錯誤訊息' do
     card.suit = 'Flower'
     comparison = 'Spades'
     expect(card.suit).to eq(comparison), "comparison: #{comparison}, card.suit: #{card.suit}"
