@@ -32,6 +32,9 @@ RSpec.describe 'raise_error matcher' do
   describe CustomError do
     it 'can check for user-create error' do
       expect { raise described_class }.to raise_error(CustomError)
-    end   
+    end
+    
+    # 也不能用單行指令書寫，因為 raise_error 預設用花括號呈現(expected CustomError but was not given a block)
+    # it { is_expected.to raise_error(CustomError) }
   end
 end
